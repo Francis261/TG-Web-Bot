@@ -11,11 +11,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Explicit routes for sdk.js and sdk.css (optional, but clearer)
 app.get("/web-bot-sdk.js", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "sdk.js"));
+  res.sendFile(path.join(__dirname, "public", "web-bot-sdk.js"));
 });
 
 app.get("/web-bot-sdk.css", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "sdk.css"));
+  res.sendFile(path.join(__dirname, "public", "web-bot-sdk.css"));
 });
 
 // Homepage docs (index.html)
