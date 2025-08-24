@@ -1,0 +1,27 @@
+{
+  "name": "telegram-web-bot-sdk",
+  "version": "1.0.0",
+  "description": "Telegram Web Bot SDK with docs and CDN hosting (sdk.js + sdk.css).",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "telegram",
+    "web-bot",
+    "sdk",
+    "express",
+    "javascript",
+    "docs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
