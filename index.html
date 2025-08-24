@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Web Bot SDK Docs</title>
+  <link rel="stylesheet" href="/sdk.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #f9f9fb;
+      color: #222;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .menu-btn {
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    /* Drawer */
+    .drawer {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: white;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      padding: 1rem;
+      transition: left 0.3s ease;
+      z-index: 20;
+    }
+
+    .drawer.open {
+      left: 0;
+    }
+
+    .drawer h2 {
+      margin-top: 0;
+    }
+
+    .drawer button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Telegram Web Bot SDK</h1>
+  <button class="menu-btn" onclick="toggleDrawer()">☰</button>
+</header>
+
+<!-- Drawer -->
+<div id="drawer" class="drawer">
+  <h2>Docs</h2>
+  <button onclick="scrollToSection('intro')">Introduction</button>
+  <button onclick="scrollToSection('install')">Installation</button>
+  <button onclick="scrollToSection('usage')">Usage</button>
+  <button onclick="scrollToSection('api')">API Methods</button>
+  <!-- ✅ You can add more buttons later -->
+</div>
+
+<main>
+  <section id="intro">
+    <h2>Introduction</h2>
+    <p>
+      The <strong>Telegram Web Bot SDK</strong> allows you to embed a bot directly into your website. 
+      It mimics real Telegram bot functionality while giving developers easy integration.
+    </p>
+  </section>
+
+  <section id="install">
+    <h2>Installation</h2>
+    <p>Include the SDK in your HTML:</p>
+    <pre><code>&lt;link rel="stylesheet" href="https://your-app.onrender.com/sdk.css"&gt;
+&lt;script src="https://your-app.onrender.com/sdk.js"&gt;&lt;/script&gt;</code></pre>
+  </section>
+
+  <section id="usage">
+    <h2>Basic Usage</h2>
+    <p>Initialize the SDK after including it:</p>
+    <pre><code>TelegramBot.init({
+  botId: "1234567890",
+  theme: "dark"
+});</code></pre>
+  </section>
+
+  <section id="api">
+    <h2>API Methods</h2>
+    <p>Example of sending a message:</p>
+    <pre><code>Api.sendMessage({
+  text: "Hello world!",
+  reply_markup: {
+    inline_keyboard: [
+      [{ text: "Home", callback_data: "/home" }]
+    ]
+  }
+});</code></pre>
+  </section>
+</main>
+
+<script>
+  function toggleDrawer() {
+    document.getElementById('drawer').classList.toggle('open');
+  }
+
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    toggleDrawer();
+  }
+</script>
+
+</body>
+  </html>
